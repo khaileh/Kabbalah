@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Kabbalah Práctica</title>
+    <link rel="manifest" href="/manifest.json" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Imported Frank Ruhl Libre for Hebrew text */
+      @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Inter:wght@300;400;600;700&display=swap');
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #ffffff;
+      }
+      
+      .font-hebrew {
+        font-family: 'Frank Ruhl Libre', serif;
+        /* Slight letter spacing adjustment for better legibility of the classic font */
+        letter-spacing: 0.02em; 
+      }
+      
+      @keyframes pulse-slow {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.8; transform: scale(0.96); }
+      }
+      .animate-pulse-slow {
+        animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.8s ease-out forwards;
+      }
+
+      @keyframes scroll-rtl {
+        from { transform: translateX(100%); }
+        to { transform: translateX(-300%); }
+      }
+      .animate-scroll-rtl {
+        animation: scroll-rtl 4s linear infinite;
+      }
+      
+      @keyframes slide-up {
+        from { transform: translateY(100%); }
+        to { transform: translateY(0); }
+      }
+      .animate-slide-up {
+        animation: slide-up 0.4s ease-out forwards;
+      }
+
+      /* Flame Flicker Animation */
+      @keyframes flame-flicker {
+        0%, 100% { transform: scale(1) rotate(-2deg); opacity: 0.9; filter: blur(0px); }
+        25% { transform: scale(1.1) rotate(2deg); opacity: 1; filter: blur(1px); }
+        50% { transform: scale(0.95) rotate(-1deg); opacity: 0.8; filter: blur(0px); }
+        75% { transform: scale(1.05) rotate(1deg); opacity: 0.95; filter: blur(1px); }
+      }
+      .animate-flame {
+        animation: flame-flicker 3s ease-in-out infinite;
+        transform-origin: bottom center;
+      }
+
+      /* Custom radiating glow */
+      .meditation-glow {
+        filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.3));
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
